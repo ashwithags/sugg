@@ -1,8 +1,33 @@
 angular.module('Flicker.directive',[])
-.directive("hi", function () {
-    return {
-        restrict: 'E',
-        replace: false,
-        tempalte: '<div>< div fusioncharts id = "my-chart-id" width="700" height="400" type="column2d" dataSource="{{myDataSource}}" ></div></div>'
-    }
+
+.directive('bars', function ($parse) {
+      return {
+         restrict: 'E',
+         replace: true,
+         template: '<div id="chart"></div>',
+         link: function (scope, element, attrs) {
+           var data = attrs.data.split(','),
+           chart = d3.select('#chart')
+             .append("div").attr("class", "chart")
+             .selectAll('div')
+             .data(data).enter()
+             .append("div")
+             .transition().ease("elastic")
+             .style("width", function(d) { return d + "%"; })
+             .text(function(d) { return d + "%"; });
+         } 
+      };
+   })
+.directive('hello', function(){
+	function linkFunction($scope, elem, attrs){
+		$scope.name = "Ashwitha";
+		$scope.changeName = function(newName){
+			$scope.name = newName;
+		}
+	}
+	return {
+		restrict: "E",
+		template: '<div onclick ="changeName("Ashwitha G S")">Hello {{name}}</div>',
+		link: 'linkFunction'
+	}
 });

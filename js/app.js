@@ -18,9 +18,9 @@ angular.module('Flicker', ['ui.router', 'Flicker.controllers', 'Flicker.services
             controller: 'ChController'
         })
         .state('sug', {
-        url: '/suggestion',
+            url: '/suggestion',
             templateUrl: 'pages/suggestion.html',
-        controller: 'sgController'
+            controller: 'sgController'
         })
         .state('sugRm', {
             url: '/suggestion-readmore',

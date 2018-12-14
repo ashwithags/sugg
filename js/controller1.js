@@ -5,16 +5,16 @@ angular.module('Flicker.controllers', [])
             console.log(loginData);
             $state.go('homepage');
         }
-
-
         $scope.signUp = function (signUpData) {
             console.log(signUpData);
 
         }
 
     })
+
     .controller('ChController', function ($scope, loginOperation) {
         $scope.myDataSource = loginOperation.graph;
+        $scope.name = 'World';
     })
 
     .controller('sgController', function ($scope, $state, loginOperation) {
@@ -25,7 +25,7 @@ angular.module('Flicker.controllers', [])
                 $scope.suggestions = recData;
                 $scope.singleSg = function (index) {
                     console.log(index);
-                    window.localStorage.setItem("lastname", index);
+                    localStorage.setItem("lastname", index);
                     $state.go('sugRm');
                 }
             }

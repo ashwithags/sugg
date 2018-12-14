@@ -46,9 +46,8 @@ angular.module('Flicker.services', [])
                 dataType: 'json'
             })
         }
-
         
-
+       
     return services;
 
 
