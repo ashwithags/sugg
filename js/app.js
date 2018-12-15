@@ -1,4 +1,4 @@
-angular.module('Flicker', ['ui.router', 'Flicker.controllers', 'Flicker.services', 'Flicker.directive', 'ng-fusioncharts'])
+angular.module('Flicker', ['ui.router', 'Flicker.controllers', 'Flicker.services', 'Flicker.directive','Flicker.filters', 'ng-fusioncharts'])
 .config(function($stateProvider, $urlRouterProvider){
 	   $urlRouterProvider.otherwise('login');
 

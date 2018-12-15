@@ -7,13 +7,12 @@
     </div>
     <div class="row">
         <div class="col-lg-2"></div>
-        <div class="col-lg-3">
-            <div class="potao-img"><img ng-src="{{singleRm.media.m}}" /></div>
-        </div>
-        <div class="col-lg-6">
+           <div class="col-lg-6">
             <h2>{{singleRm.title}}</h2>
             <h4>Published: {{singleRm.published}} </h4>
             <h4>Author: {{singleRm.author}} </h4>
+            <div ng-bind-html="singleRm.description| trust"></div>
+
         </div>
         <div class="col-lg-2">
             <a href="#/suggestion" u-sref="sug">Back</a>

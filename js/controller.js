@@ -41,6 +41,7 @@ angular.module('Flicker.controllers', [])
             if (recData) {
                 var i = sessionStorage.getItem("CurentSug");
                 console.log(i);
+                $scope.suggestions = recData;
                 $scope.singleRm = recData.items[i];
                 }
                 }).error(function () {
