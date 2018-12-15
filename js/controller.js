@@ -25,7 +25,7 @@ angular.module('Flicker.controllers', [])
                 $scope.suggestions = recData;
                 $scope.singleSg = function (index) {
                     console.log(index);
-                    localStorage.setItem("lastname", index);
+                    sessionStorage.setItem("CurentSug", index);
                     $state.go('sugRm');
                 }
             }
@@ -39,9 +39,9 @@ angular.module('Flicker.controllers', [])
      
         loginOperation.suggestion().success(function (recData) {
             if (recData) {
-                //var i = sessionStorage.getItem("curentSug");
-                //console.log(i);
-                $scope.singleRm = recData.items[11];
+                var i = sessionStorage.getItem("CurentSug");
+                console.log(i);
+                $scope.singleRm = recData.items[i];
                 }
                 }).error(function () {
             console.log("Request failed");
