@@ -27,7 +27,7 @@ angular.module('Flicker.directive',[])
 	}
 	return {
 		restrict: "E",
-		template: '<div onclick ="changeName("Ashwitha G S")">Hello {{name}}</div>',
+		template: '<div ng-click ="changeName("Ashwitha G S")">Hello {{name}}</div>',
 		link: 'linkFunction'
 	}
 });
